@@ -8,21 +8,22 @@ import { DataService } from '../data.service';
 })
 export class ContactComponent implements OnInit {
 
+  
+  listcont:any;
   listdata:any;
-  listcont:Array<any>=[];
   constructor(private service:DataService) { }
 
-   async ngOnInit() 
+  
+   ngOnInit() 
   {
-    await this.service.getContact().then(res =>{
-      this.listdata=res.data.contacts.primary;
-      console.log(res.data)
-    })
-
-    await this.service.getContact().then(res =>{
+    this.service.getContact().subscribe(res => {
+      
+      this.listdata = res.data.contacts.primary;
       this.listcont=res.data.contacts.regional;
-      console.log(res.data)
-    })
+      console.log(res.data.contacts.primary);
+
+    }) 
   }
+  
 
 }

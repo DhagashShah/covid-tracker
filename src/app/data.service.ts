@@ -19,7 +19,8 @@ export class DataService implements OnInit{
   url_statewise = 'https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise'
   url_dailycases = 'https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise/history'
   ulr_districtwise = "https://api.covid19india.org/state_district_wise.json"
-  
+  url_contact = "https://api.rootnet.in/covid19-in/contacts"
+
   
   ngOnInit()
   {
@@ -37,15 +38,11 @@ export class DataService implements OnInit{
   getState(state) {
     this.state = state
   }
-  getNationData():Promise<any>
-  {
-    return this.http.get(`${environment.Base_URL}latest`).toPromise();
-  }
 
-  getContact():Promise<any>
-  {
-    return this.http.get(`${environment.contact_url}contacts`).toPromise();
+  getContact():Observable<any>{
+    return this.http.get(this.url_contact);
   }
+ 
 
   getDataDistrictWise(state) {
     this.http.get(this.ulr_districtwise).subscribe(data => {

@@ -4,9 +4,8 @@
 
 export const environment = {
   production: false,
-  Base_URL:"https://api.rootnet.in/covid19-in/stats/",
-  contact_url:"https://api.rootnet.in/covid19-in/"
-  // Base_URL2:"https://api.covid19api.com/"
+  
+  
 };
 
 /*
