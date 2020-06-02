@@ -1,0 +1,90 @@
+<div class="container my-5">
+    <div class="row">
+        <div class="col col-example">
+            <!-- Jumbotron -->
+            <div class="jumbotron text-center danger-color  white-text mx-2 mb-5 col-lg-10">
+
+                <!-- Title -->
+                <h2 class="card-title h2">Confirmed</h2>
+
+                <hr class="my-4 rgba-white-light">
+
+                <div class="pt-2">
+                    <h2 class="card-title h2">[+{{DailyStatus.total.confirmed}}]</h2>
+                </div>
+                <div class="pt-2">
+                    <h2 class="card-title h2">{{statewisecase.confirmed}}</h2>
+                </div>
+            </div>
+            <!-- Jumbotron -->
+        </div>
+        <div class="col col-example">
+            <!-- Jumbotron -->
+            <div class="jumbotron text-center info-color-dark white-text mx-2 mb-5 col-lg-10">
+
+                <!-- Title -->
+                <h2 class="card-title h2">Active</h2>
+
+                <hr class="my-4 rgba-white-light">
+                <div class="pt-2">
+                    <h2 class="card-title h2">[+{{DailyStatus.total.active}}]</h2>
+                </div>
+                <div class="pt-2">
+                    <h2 class="card-title h2">{{statewisecase.active}}</h2>
+                </div>
+
+            </div>
+            <!-- Jumbotron -->
+        </div>
+        <div class="w-100"></div>
+        <div class="col col-example">
+            <!-- Jumbotron -->
+            <div class="jumbotron text-center success-color-dark white-text mx-2 mb-5 col-lg-10">
+
+                <!-- Title -->
+                <h2 class="card-title h2">Recovered</h2>
+
+                <hr class="my-4 rgba-white-light">
+                <div class="pt-2">
+                    <h2 class="card-title h2">[+{{DailyStatus.total.recovered}}]</h2>
+                </div>
+                <div class="pt-2">
+                    <h2 class="card-title h2">{{statewisecase.recovered}}</h2>
+                </div>
+
+            </div>
+            <!-- Jumbotron -->
+        </div>
+        <div class="col col-example">
+            <!-- Jumbotron -->
+            <div class="jumbotron text-center blue-grey white-text mx-2 mb-5 col-lg-10">
+
+                <!-- Title -->
+                <h2 class="card-title h2">Deaths</h2>
+
+                <hr class="my-4 rgba-white-light">
+                <div class="pt-2">
+                    <h2 class="card-title h2">[+{{DailyStatus.total.deaths}}]</h2>
+                </div>
+                <div class="pt-2">
+                    <h2 class="card-title h2">{{statewisecase.deaths}}</h2>
+                </div>
+
+            </div>
+            <!-- Jumbotron -->
+        </div>
+    </div>
+
+    <div class="w3-container">
+        <!-- Pie Chart -->
+        <div class="w3-half w3-center">
+            <div style="display: inline-block">
+                <ngx-charts-pie-chart [view]="view2" [scheme]="colorScheme2" [results]="single2" [gradient]=""
+                    [legend]="showLegend2" [legendPosition]="legendPosition" [labels]="showLabels2"
+                    [doughnut]="isDoughnut" (select)="onSelect($event)" (activate)="onActivate($event)"
+                    (deactivate)="onDeactivate($event)">
+                </ngx-charts-pie-chart>
+            </div>
+        </div>
+    </div>
+</div>
